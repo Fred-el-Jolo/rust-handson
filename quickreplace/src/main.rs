@@ -51,7 +51,7 @@ fn main() {
         }
     };
 
-    let replacedData = match replace(&args.target, &args.replacement, &data) {
+    let replaced_data = match replace(&args.target, &args.replacement, &data) {
         Ok(v) => v,
         Err(e) => {
             eprintln!("{} failed to replace text: {:?}", "Error".red().bold(), e);
@@ -59,7 +59,7 @@ fn main() {
         }
     };
 
-    match fs::write(&args.output, &replacedData) {
+    match fs::write(&args.output, &replaced_data) {
         Ok(_) => {},
         Err(e) => {
             eprintln!("{} failed to write to file '{}': {:?}", "Error".red().bold(), args.output, e);
